@@ -5,8 +5,8 @@ const TodoForm = ({addTodo}) => {
     
     const HandleSubmit = (e) => {
        e.preventDefault();
-       addTodo(value)
-       setValue("")
+       addTodo(value) 
+       setValue("") // by default hoye jabe
     };
     
  
@@ -19,3 +19,5 @@ const TodoForm = ({addTodo}) => {
 };
 
 export default TodoForm;
+
+//8. calling this function , example == addTodo("go fishing"), in its parent function will start its programme there

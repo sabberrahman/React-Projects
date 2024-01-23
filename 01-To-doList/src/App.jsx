@@ -15,3 +15,5 @@ function App() {
 }
 
 export default App
+
+//create vite@latest .(dot) --for having everything in the current folder 

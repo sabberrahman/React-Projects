@@ -80,8 +80,14 @@ h1 {
 }
 
 .completed {
-  color: #c5aeff;
+  color: #c2a5ff;
   text-decoration: line-through;
   cursor: pointer;
 }
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+}
+ 
 
