@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import TodoForm from './TodoForm';
 import {v4 as uuidv4} from "uuid";
 import Todo from './Todo';
+import editTodoForm from './EditTodoForm';
+import EditTodoForm from './EditTodoForm';
 uuidv4();
 
 const TodoWrapper = () => {
@@ -11,9 +13,7 @@ const TodoWrapper = () => {
         setTodos([...todos,{id: uuidv4(),task: todo,completed:false , isEditting:false}])
        } 
 
-    const toggleComplete = (id) => {
-        console.log(id)
-        console.log(todos)
+    const toggleComplete = (id) => { 
         setTodos(
             todos.map((todo) =>
               todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -23,21 +23,36 @@ const TodoWrapper = () => {
         setTodos(todos.filter((todo)=>Todo.id !==id)) //Bolbe right is wrong :)))
     }
 
-    
-    console.log(todos)
+    const editTodo = (id)=>{
+        setTodos(todos.map((todo)=> Todo.id === id ? {...Todo, isEditting: !Todo.isEditting} : todo))
+    }
+
+
     return (
         <div className='TodoWrapper'>
             <h1>Make a Plan!!✨ </h1>
             <TodoForm addTodo={addTodo}/>
-            {todos.map((todo,index)=>(
-             <Todo task={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo}/>  
-            ))}
+            {todos.map((todo) =>
+              todo.isEditing ? (
+             <EditTodoForm  />
+        ) : (
+          <Todo
+            key={todo.id}
+            task={todo}
+            deleteTodo={deleteTodo}
+            editTodo={editTodo}
+            toggleComplete={toggleComplete}
+          />
+        )
+      )}
            
         </div>
     );
 };
 
 export default TodoWrapper;
+
+// we want to show if editting is true it will show the editting form and if not it will show the normal default one 
 
 
 // 4.addTodo("Buy groceries"), the todo parameter ,The function would then use this value to create a new todo object and add it to the todos array.
@@ -51,3 +66,10 @@ export default TodoWrapper;
 // parent a function ..calling child a kora jay 
 
 //Logic== 
+
+// {todos.map((todo,index)=>
+// todo.isEditting ? 
+// ( <EditTodoForm editTodo={editTodo} task={todo}/>)
+//   :
+// (<Todo task={todo} key={index} toggleComplete={toggleComplete} deleteTodo={deleteTodo} editTodo={editTodo} />  )
+// )}
