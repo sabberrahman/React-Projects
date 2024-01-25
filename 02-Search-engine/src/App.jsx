@@ -10,25 +10,26 @@ const IMAGES_PER_PAGE=20;
 function App() {
   const searchInput = useRef(null)
   const [images , setImages]= useState([])
+  const [page , setPage]=useState(1)
   const [totalPages , setTotalPages]= useState(0)
   
 
   const handleSubmit =(e)=>{
     e.preventDefault()
-    fetchImages();
-    // console.log(searchInput) -- current value tye search value
-    // console.log(searchInput.current.value)
+    fetchImages(); // updates on submit 
+    setPage(1); // back to page 1 when submit smt new
   }
 
   const handleSelection=(selection)=>{
     searchInput.current.value=selection;
     fetchImages();
+    setPage(1); //back to page 1 when clicking suggestion
   }
 
   const fetchImages = async () => {
     try {
       const result = await axios.get(
-        `${API_URL}?query=${searchInput.current.value}&page=1&per_page=${IMAGES_PER_PAGE}&client_id=${import.meta.env.VITE_API_KEY}`
+        `${API_URL}?query=${searchInput.current.value}&page=${page}&per_page=${IMAGES_PER_PAGE}&client_id=${import.meta.env.VITE_API_KEY}`
       );
       const data =result.data;
     setImages(data.results)
@@ -37,14 +38,18 @@ function App() {
     } catch (error) {
       console.log("error")   
   };
- 
-  
 }
+//calling api again on buttun click
+ useEffect(()=>{
+  fetchImages();
+ },[page])
 
 
   return (
     <div className='container'>
-      <h1 className='title'>Image search karlo </h1>
+      <h1 className='title'>
+        What are you looking for 
+       </h1>
       <div className='search-section'>
 
         <form onSubmit={handleSubmit} >
@@ -54,10 +59,10 @@ function App() {
         </form>
       </div>
       <div className="filters">
-          <div onClick={()=>handleSelection("nature")}>nature</div>
-          <div onClick={()=>handleSelection("cats")}>cats</div>
-          <div onClick={()=>handleSelection("city")}>city</div>
-          <div onClick={()=>handleSelection("food")} >food</div>
+          <div onClick={()=>handleSelection("Nature")}>Nature</div>
+          <div onClick={()=>handleSelection("Cats")}>Cats</div>
+          <div onClick={()=>handleSelection("Mushroom")}>Mushroom</div>
+          <div onClick={()=>handleSelection("Coffee")} >Coffee</div>
         </div>
         <div className="images">
           {images.map((image)=>{
@@ -69,8 +74,20 @@ function App() {
              )
           })}
         </div>
+        <div className="buttons">
+          {page > 1 && (<button onClick={()=> setPage(page-1)} className='btn' >previous</button>)}
+          {page < totalPages && (<button onClick={()=> setPage(page+1)} className='btn'>next</button>)}
+        </div>
     </div>
   )
-}
+} 
 
 export default App;
+
+// we need to call api again when page value changes ..we going to use useEff
+
+// same code 2 bar or multi bar use na kore ekta method e call kora better 
+// const resetSearch =()=>{
+//   fetchImages();
+//   setPage(1);
+// }
