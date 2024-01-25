@@ -27,16 +27,17 @@ function App() {
 
   const fetchImages = async () => {
     try {
-      const {data} = await axios.get(
+      const result = await axios.get(
         `${API_URL}?query=${searchInput.current.value}&page=1&per_page=${IMAGES_PER_PAGE}&client_id=${import.meta.env.VITE_API_KEY}`
       );
+      const data =result.data;
     setImages(data.results)
     setTotalPages(data.total_pages)
-      console.log("result", result.data)
+      console.log("result", data )
     } catch (error) {
       console.log("error")   
   };
-  console.log(data)
+ 
   
 }
 
@@ -59,7 +60,14 @@ function App() {
           <div onClick={()=>handleSelection("food")} >food</div>
         </div>
         <div className="images">
-
+          {images.map((image)=>{
+             return (
+              <img src={image.cover_photo.urls.small} 
+              alt={image.cover_photo.alt_description}
+              className='image'
+              key={image.cover_photo.id}/>
+             )
+          })}
         </div>
     </div>
   )
