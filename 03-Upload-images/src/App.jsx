@@ -7,6 +7,8 @@ function App() {
   return (
     <>
       <h1>Upload Your Images</h1>
+      <input type="file"  />
+      <button type="button"> Upload it !!</button>
     </>
   )
 }
