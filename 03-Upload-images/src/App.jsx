@@ -12,7 +12,6 @@ function App() {
 
   const uploadImage=(e)=>{
     if (imageUpload == null)  return ; 
-    
     //folder create ..unique name given..where created for uploadBytes 
     const imageRaf = ref(storage , `images/${imageUpload.name + v4()}`);
 
@@ -37,35 +36,35 @@ function App() {
 
   return (
     <>
-      <div className="container mx-auto my-8 p-8 bg-white shadow-md">
-  <div className="text-4xl mb-4 text-center">
-    <h1>Upload Your Images</h1>
-  </div>
+    <div className="container mx-auto my-8 p-8 bg-white shadow-md">
+      <div className="text-4xl mb-4 text-center">
+        <h1>Upload Your Images</h1>
+      </div>
   
   <div className="flex flex-col items-center">
-    <input
-      type="file"
-      onChange={(e) => setImageUpload(e.target.files[0])}
-      className="border p-2 mb-4"
-    />
-    <button
-      type="button"
-      onClick={(e) => uploadImage(e)}
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-    >
-      Upload it !!
-    </button>
+      <input
+        type="file"
+        onChange={(e) => setImageUpload(e.target.files[0])}
+        className="border p-2 mb-4"
+      />
+      <button
+        type="button"
+        onClick={(e) => uploadImage(e)}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Upload it !!
+      </button>
   </div>
 
   <div className="flex flex-wrap mt-8">
-    {imageList.map((url, index) => (
-      <img
-        key={index}
-        src={url}
-        alt={`Image ${index + 1}`}
-        className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-2"
-      />
-    ))}
+      {imageList.map((url, index) => (
+        <img
+          key={index}
+          src={url}
+          alt={`Image ${index + 1}`}
+          className="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-2"
+        />
+      ))}
   </div>
 </div>
     </>
