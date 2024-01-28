@@ -1,38 +1,22 @@
 import React from 'react';
 import "./Colors.css"
+import Input from '../../Componets/Input';
 
 const Colors = () => {
     return (
         <div className='ml'>
           <h2 className="sidebar-title price-title">Colors</h2>
-          <label className="sidebar-label-container">
-            <input type="radio" name="2test"/>
-            <span className="checkmark"></span>All
-           </label>
-           <label className="sidebar-label-container">
-            <input type="radio" name="2test"/>
-            <span className="checkmark"></span>Black
-           </label>
-           <label className="sidebar-label-container">
-            <input type="radio" name="2test"/>
-            <span className="checkmark"></span>Red
-           </label>
-           <label className="sidebar-label-container">
-            <input type="radio" name="2test"/>
-            <span className="checkmark"></span>Blue
-           </label>
-           <label className="sidebar-label-container">
-            <input type="radio" name="2test"/>
-            <span className="checkmark"></span>Green
-           </label>
-           <label className="sidebar-label-container">
-            <input type="radio" name="2test"/>
-            <span className="checkmark"></span>White
-           </label>
-
+         <div>
+          <Input/><Input/><Input/><Input/><Input/><Input/>
+         </div>
           
         </div>
     );
 };
 
 export default Colors;
+
+{/* <label className="sidebar-label-container">
+            <input type="radio" name="3test"/>
+            <span className="checkmark"></span>All
+           </label> */}
