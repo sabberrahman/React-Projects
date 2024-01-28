@@ -8,19 +8,19 @@ const Catagory = () => {
 
            <label className="sidebar-label-container">
             <input type="radio" name="test"/>
-            <span className="checkmark">All</span>
+            <span className="checkmark"></span>All
            </label>
            <label className="sidebar-label-container">
             <input type="radio" name="test"/>
-            <span className="checkmark">sneakers</span>
+            <span className="checkmark" ></span>sneakers
            </label>
            <label className="sidebar-label-container">
             <input type="radio" name="test"/>
-            <span className="checkmark">Flats</span>
+            <span className="checkmark" ></span>Flats
            </label>
            <label className="sidebar-label-container">
             <input type="radio" name="test"/>
-            <span className="checkmark">Heels</span>
+            <span className="checkmark"></span>Heels
            </label>
 
         </div>
