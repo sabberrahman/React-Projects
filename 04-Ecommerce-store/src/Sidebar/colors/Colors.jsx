@@ -9,7 +9,13 @@ const Colors = ({handleChange}) => {
           <label className="sidebar-label-container">
                 <input onChange={handleChange} type="radio" name="test3"
                 value="" />
-                <span className="checkmark"></span> All
+                <span className="checkmark all"></span> All
+            </label>
+
+            <label className="sidebar-label-container">
+                <input onChange={handleChange} type="radio" name="test3"
+                value="white" style={{backgroundColor:"white", border:"2px solid black"}} />
+                <span className="checkmark"></span> white
             </label>
             
             <Input
@@ -42,18 +48,10 @@ const Colors = ({handleChange}) => {
             color="blue"
             />
 
-            <label className="sidebar-label-container">
-                <input onChange={handleChange} type="radio" name="test3"
-                value="white" style={{backgroundColor:"white", border:"2px solid black"}} />
-                <span className="checkmark"></span> white
-            </label>
+            
         </div>
     );
 };
 
 export default Colors;
 
-{/* <label className="sidebar-label-container">
-            <input type="radio" name="3test"/>
-            <span className="checkmark"></span>All
-           </label> */}
