@@ -11,10 +11,10 @@ import Card from './Componets/Card'
 
 function App() {
   const [selectedCategory, setselectedCategory] = useState(null)
-
-  //input filter 
   const [query,setQuery]=useState("")
-
+ 
+ 
+ //input filter 
   const handleInputChange = (e)=>{
      setQuery(e.target.value)
   }
@@ -35,7 +35,7 @@ function App() {
     let filteredProducts = products
     //filtering input items
     if (query){
-      filteredProducts =filtereditems
+      filteredProducts =filteredItems
     }
 
     //selected filter 
@@ -48,7 +48,7 @@ function App() {
       newPice === selected )
     }
 
-    return filteredProducts.map(({img,title,star,reviews,prevPrice})=>(
+    return filteredProducts.map(({img,title,star,reviews,prevPrice, newPrice})=>(
       <Card
       key={Math.random()}
       img={img}
@@ -56,9 +56,12 @@ function App() {
       star={star}
       reviews={reviews}
       newPrice={newPrice}
+      prevPrice={prevPrice}
       />
     ))
   }
+
+  const result = filteredData(products,selectedCategory,query)
 
   
    
