@@ -17,25 +17,25 @@ const Catagory = ({handleChange}) => {
             <Input
             handleChange={handleChange}
             value="sneakers"
-            title="Sneakers"
+            title="sneakers"
             name="test"
             />
             <Input
             handleChange={handleChange}
             value="flats"
-            title="Flats"
+            title="flats"
             name="test"
             />
             <Input
             handleChange={handleChange}
             value="sandals"
-            title="Sandals"
+            title="sandals"
             name="test"
             />
             <Input
             handleChange={handleChange}
             value="heels"
-            title="Heels"
+            title="heels"
             name="test"
             />
             </div>

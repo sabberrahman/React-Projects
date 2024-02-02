@@ -4,10 +4,10 @@ import { AiFillStar } from 'react-icons/ai';
 import { LuShoppingBag } from "react-icons/lu";
 import Card from '../Componets/Card';
 
-const Products = () => {
+const Products = ({result}) => {
     return (
         <section className='card-container'>
-          <Card/> <Card/><Card/><Card/><Card/><Card/><Card/>
+          {result}
         </section>
     );
 };
