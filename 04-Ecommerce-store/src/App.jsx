@@ -31,6 +31,7 @@ function App() {
     setselectedCategory(event.target.value);
   };
 
+  // Main Function
   function filteredData(products, selectedCategory, query) {
     let filteredProducts = [...products];
   
@@ -44,8 +45,8 @@ function App() {
   
     // Filter based on selected category
     if (selectedCategory) {
-      filteredProducts = filteredProducts.filter(({ category, color, company, title, newPice }) =>
-        [category, color, company, title, newPice].some(property =>
+      filteredProducts = filteredProducts.filter(({ category, color, company, title, newPrice }) =>
+        [category, color, company, title, newPrice].some(property =>
           property && property.toLowerCase().includes(selectedCategory.toLowerCase())
         )
       );

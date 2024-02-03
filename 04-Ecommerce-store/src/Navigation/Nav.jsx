@@ -3,14 +3,15 @@ import { FiHeart } from "react-icons/fi";
 import { AiOutlineShoppingCart, AiOutlineUserAdd } from "react-icons/ai";
 import "./Nav.css"
 
-const Navigation = () => {
+const Navigation = ({handleInputChange}) => {
     return (
         
         <nav>
             <div className="nav-cointainer">
                 <input type="text"
+                onChange={handleInputChange}
                 className='search-input' 
-                placeholder='enter what you looking ' />
+                placeholder='Enter what you looking ' />
             </div>
             <div className="profile-container">
                 <a href="#">
