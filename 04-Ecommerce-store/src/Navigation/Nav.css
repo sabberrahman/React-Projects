@@ -1,4 +1,4 @@
-nav {
+/* nav {
     display: flex;
     border-bottom: 2px solid #f3f3f3;
     justify-content: space-around;
@@ -23,4 +23,51 @@ nav {
     width: 1.5rem;
     height: 1.5rem;
     margin-left: 2rem;
+  } */
+
+  /* Default styles for larger screens */
+nav {
+  display: flex;
+  border-bottom: 2px solid #f3f3f3;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  z-index: 999;
+  margin-left: 2rem;
+}
+
+input {
+  padding: 12px 20px;
+  border: none;
+  background: #f7f6f6;
+  outline: none;
+  margin-right: 20px;
+  border-radius: 5px;
+  position: relative;
+  width: 15rem;
+}
+
+.nav-icons {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 2rem;
+}
+
+/* Responsive styles for smaller screens */
+@media only screen and (max-width: 767px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+    margin-left: 0;
   }
+
+  input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-icons {
+    margin-left: 0;
+  }
+}
