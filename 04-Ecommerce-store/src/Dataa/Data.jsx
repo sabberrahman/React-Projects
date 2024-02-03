@@ -56,7 +56,7 @@ const data = [
     newPrice: "200",
     company: "Vans",
     color: "green",
-    category: "flats",
+    category: "sandals",
   },
   {
     img: "https://m.media-amazon.com/images/I/71zKuNICJAL._AC_UX625_.jpg",
@@ -67,7 +67,7 @@ const data = [
     newPrice: "50",
     company: "Adidas",
     color: "black",
-    category: "flats",
+    category: "sandals",
   },
 
   {
@@ -193,7 +193,7 @@ const data = [
     newPrice: "100",
     company: "Vans",
     color: "white",
-    category: "sandals",
+    category: "flats",
   },
   {
     img: "https://m.media-amazon.com/images/I/71pf7VFs9CL._AC_UX575_.jpg",
@@ -204,7 +204,7 @@ const data = [
     newPrice: "100",
     company: "Vans",
     color: "blue",
-    category: "sandals",
+    category: "flats",
   },
   {
     img: "https://m.media-amazon.com/images/I/61N4GyWcHPL._AC_UY575_.jpg",
@@ -215,7 +215,7 @@ const data = [
     newPrice: "50",
     company: "Nike",
     color: "black",
-    category: "sandals",
+    category: "flats",
   },
   {
     img: "https://m.media-amazon.com/images/I/61bncQ44yML._AC_UX695_.jpg",
@@ -315,7 +315,7 @@ const data = [
     newPrice: "50",
     company: "Adidas",
     color: "black",
-    category: "flats",
+    category: "sandals",
   },
 ];
 
